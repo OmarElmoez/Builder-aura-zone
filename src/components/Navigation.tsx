@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { navigationItems } from "@/constants";
 import { Menu, X, Bot, Zap } from "lucide-react";
 
 const Navigation = () => {
@@ -17,12 +18,6 @@ const Navigation = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Projects", href: "/projects" },
-    { name: "About", href: "/about" },
-  ];
 
   return (
     <motion.nav
@@ -46,7 +41,7 @@ const Navigation = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          {navItems.map((item) => (
+          {navigationItems.map((item) => (
             <Link
               key={item.name}
               to={item.href}
@@ -100,7 +95,7 @@ const Navigation = () => {
             className="md:hidden mt-4 pt-4 border-t border-white/10"
           >
             <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
+              {navigationItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
