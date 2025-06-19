@@ -316,14 +316,9 @@ html {
 
   /* Aurora background */
   .aurora-bg {
-    background: linear-gradient(
-      118deg,
-      theme(colors.blue.900) 0%,
-      theme(colors.violet.900) 50%,
-      theme(colors.purple.900) 100%
-    );
+    background: linear-gradient(118deg, #1e3a8a 0%, #581c87 50%, #701a75 100%);
     background-size: 300% 300%;
-    animation: aurora 60s ease infinite;
+    animation: aurora 60s linear infinite;
   }
 
   /* Gradient text */
