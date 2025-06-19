@@ -22,5 +22,14 @@ export default defineConfig(({ mode }) => ({
     commonjsOptions: {
       include: [/node_modules/],
     },
+    rollupOptions: {
+      external: [],
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
+  optimizeDeps: {
+    include: ["clsx", "tailwind-merge"],
   },
 }));
