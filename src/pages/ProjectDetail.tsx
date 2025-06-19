@@ -52,7 +52,7 @@ const ProjectDetail = () => {
               </Button>
             </Link>
           </div>
-        </LayeredBackground>
+        </section>
       </AuroraBackground>
     );
   }
