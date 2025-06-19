@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { AuroraBackground } from "@/components/aceternity/AuroraBackground";
 import { GlowingCard } from "@/components/aceternity/FloatingCards";
+import {
+  LayeredBackground,
+  SectionDivider,
+} from "@/components/aceternity/FlowingBackgrounds";
 import Navigation from "@/components/Navigation";
 import { projects, projectCategories } from "@/constants";
 import {
@@ -29,7 +33,7 @@ const Projects = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20">
+      <LayeredBackground variant="hero" className="pt-32 pb-20">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -57,10 +61,13 @@ const Projects = () => {
             </p>
           </motion.div>
         </div>
-      </section>
+      </LayeredBackground>
+
+      {/* Section Divider */}
+      <SectionDivider />
 
       {/* Category Filter */}
-      <section className="pb-16">
+      <LayeredBackground variant="subtle" className="pb-16">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -89,10 +96,10 @@ const Projects = () => {
             ))}
           </motion.div>
         </div>
-      </section>
+      </LayeredBackground>
 
       {/* Projects Grid */}
-      <section className="pb-20">
+      <LayeredBackground variant="section" className="pb-20">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {filteredProjects.map((project, index) => {
@@ -219,10 +226,10 @@ const Projects = () => {
             })}
           </div>
         </div>
-      </section>
+      </LayeredBackground>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <LayeredBackground variant="hero" className="py-20">
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -255,7 +262,7 @@ const Projects = () => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </LayeredBackground>
     </AuroraBackground>
   );
 };
