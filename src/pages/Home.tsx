@@ -11,6 +11,7 @@ import {
 } from "@/components/aceternity/FloatingCards";
 import { TextGenerateEffect } from "@/components/aceternity/TextGenerateEffect";
 import Navigation from "@/components/Navigation";
+import { companyStats } from "@/constants";
 import {
   Bot,
   Zap,
@@ -58,7 +59,7 @@ const Home = () => {
     },
   ];
 
-  const stats = [
+  const statsWithIcons = [
     {
       number: "300%",
       label: "Campaign Performance Boost",
@@ -98,6 +99,18 @@ const Home = () => {
       <section className="relative min-h-screen flex items-center justify-center pt-20">
         <BackgroundBeams />
         <Meteors number={30} />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20" />
+
+        {/* Floating orbs */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl animate-float" />
+        <div
+          className="absolute top-40 right-20 w-48 h-48 bg-purple-500/10 rounded-full blur-2xl animate-float"
+          style={{ animationDelay: "1s" }}
+        />
+        <div
+          className="absolute bottom-40 left-20 w-24 h-24 bg-pink-500/10 rounded-full blur-2xl animate-float"
+          style={{ animationDelay: "2s" }}
+        />
 
         <div className="container mx-auto px-6 text-center relative z-10">
           <motion.div
@@ -150,7 +163,7 @@ const Home = () => {
       <section className="py-20 relative">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
+            {statsWithIcons.map((stat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
