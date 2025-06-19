@@ -7,6 +7,10 @@ import {
   GlowingCard,
   FloatingCard,
 } from "@/components/aceternity/FloatingCards";
+import {
+  LayeredBackground,
+  SectionDivider,
+} from "@/components/aceternity/FlowingBackgrounds";
 import Navigation from "@/components/Navigation";
 import { getProjectBySlug, getRelatedProjects } from "@/constants";
 import {
@@ -48,7 +52,7 @@ const ProjectDetail = () => {
               </Button>
             </Link>
           </div>
-        </section>
+        </LayeredBackground>
       </AuroraBackground>
     );
   }
@@ -61,7 +65,7 @@ const ProjectDetail = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20">
+      <LayeredBackground variant="hero" className="pt-32 pb-20">
         <div className="container mx-auto px-6">
           {/* Back Navigation */}
           <motion.div
@@ -189,10 +193,13 @@ const ProjectDetail = () => {
             </div>
           </div>
         </div>
-      </section>
+      </LayeredBackground>
+
+      {/* Section Divider */}
+      <SectionDivider />
 
       {/* Challenge & Solution Section */}
-      <section className="py-20 relative">
+      <LayeredBackground variant="section" className="py-20">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div
@@ -249,10 +256,10 @@ const ProjectDetail = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </LayeredBackground>
 
       {/* Technologies & Features */}
-      <section className="py-20">
+      <LayeredBackground variant="subtle" className="py-20">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Technologies */}
@@ -309,10 +316,10 @@ const ProjectDetail = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </LayeredBackground>
 
       {/* Results Section */}
-      <section className="py-20">
+      <LayeredBackground variant="section" className="py-20">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -348,11 +355,11 @@ const ProjectDetail = () => {
             ))}
           </div>
         </div>
-      </section>
+      </LayeredBackground>
 
       {/* Testimonial */}
       {project.testimonial && (
-        <section className="py-20">
+        <LayeredBackground variant="subtle" className="py-20">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -380,14 +387,14 @@ const ProjectDetail = () => {
                   </div>
                 </div>
               </GlowingCard>
-            </motion.div>
-          </div>
+          </motion.div>
+        </LayeredBackground>
         </section>
       )}
 
       {/* Related Projects */}
       {relatedProjects.length > 0 && (
-        <section className="py-20">
+        <LayeredBackground variant="section" className="py-20">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -448,7 +455,7 @@ const ProjectDetail = () => {
       )}
 
       {/* CTA Section */}
-      <section className="py-20">
+      <LayeredBackground variant="hero" className="py-20">
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -482,7 +489,7 @@ const ProjectDetail = () => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </LayeredBackground>
     </AuroraBackground>
   );
 };
