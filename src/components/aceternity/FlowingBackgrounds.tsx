@@ -112,6 +112,7 @@ export const FlowingLines: React.FC<{ className?: string }> = ({
         fill="none"
       >
         <motion.path
+          key="path-1"
           d="M0,300 Q250,100 500,300 T1000,300"
           stroke="url(#gradient1)"
           strokeWidth="2"
@@ -122,6 +123,7 @@ export const FlowingLines: React.FC<{ className?: string }> = ({
           transition={{ duration: 3, ease: "easeInOut" }}
         />
         <motion.path
+          key="path-2"
           d="M0,700 Q250,500 500,700 T1000,700"
           stroke="url(#gradient2)"
           strokeWidth="2"
