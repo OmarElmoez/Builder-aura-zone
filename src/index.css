@@ -203,7 +203,7 @@ html {
   border-radius: 50%;
   background: linear-gradient(90deg, #64748b, transparent);
   filter: drop-shadow(0 0 6px #64748b);
-  animation: var(--animate-meteor);
+  animation: meteor 5s linear infinite;
 }
 
 .meteor:before {
