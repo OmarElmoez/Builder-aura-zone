@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { AuroraBackground } from "@/components/aceternity/AuroraBackground";
+import { BackgroundBeams } from "@/components/aceternity/BackgroundBeams";
+import { Meteors } from "@/components/aceternity/Meteors";
 import { GlowingCard } from "@/components/aceternity/FloatingCards";
 import Navigation from "@/components/Navigation";
+import { projects, projectCategories } from "@/constants";
 import {
-  Bot,
   TrendingUp,
-  Users,
-  MessageSquare,
-  BarChart3,
-  Target,
   Zap,
-  Brain,
   ExternalLink,
   ArrowRight,
   Play,
   Calendar,
-  DollarSign,
+  Sparkles,
 } from "lucide-react";
 
 const Projects = () => {
