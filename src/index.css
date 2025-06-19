@@ -225,7 +225,7 @@ html {
     transparent 75%
   );
   background-size: 200% 100%;
-  animation: var(--animate-shimmer);
+  animation: shimmer 2s linear infinite;
 }
 
 /* Beam effect */
@@ -247,12 +247,12 @@ html {
     rgba(255, 255, 255, 0.2),
     transparent
   );
-  animation: var(--animate-beam);
+  animation: beam 2s linear infinite;
 }
 
 /* Floating animation */
 .float {
-  animation: var(--animate-float);
+  animation: float 3s ease-in-out infinite;
 }
 
 /* Custom scrollbar */
