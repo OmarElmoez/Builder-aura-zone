@@ -2,11 +2,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { AuroraBackground } from "@/components/aceternity/AuroraBackground";
+import { BackgroundBeams } from "@/components/aceternity/BackgroundBeams";
+import { Meteors } from "@/components/aceternity/Meteors";
 import {
   FloatingCard,
   GlowingCard,
 } from "@/components/aceternity/FloatingCards";
+import ConnectedTimeline from "@/components/ConnectedTimeline";
 import Navigation from "@/components/Navigation";
+import { companyStats, companyTimeline } from "@/constants";
 import {
   Users,
   Target,
@@ -28,28 +32,15 @@ import {
 } from "lucide-react";
 
 const About = () => {
-  const stats = [
-    {
-      number: "500+",
-      label: "Agencies Transformed",
-      icon: <Building className="h-6 w-6" />,
-    },
-    {
-      number: "95%",
-      label: "Client Retention Rate",
-      icon: <Heart className="h-6 w-6" />,
-    },
-    {
-      number: "$50M+",
-      label: "Revenue Generated",
-      icon: <TrendingUp className="h-6 w-6" />,
-    },
-    {
-      number: "24/7",
-      label: "AI Monitoring",
-      icon: <Clock className="h-6 w-6" />,
-    },
-  ];
+  const statsWithIcons = companyStats.map((stat, index) => ({
+    ...stat,
+    icon: [
+      <Building className="h-6 w-6" key="building" />,
+      <Heart className="h-6 w-6" key="heart" />,
+      <TrendingUp className="h-6 w-6" key="trending" />,
+      <Clock className="h-6 w-6" key="clock" />,
+    ][index],
+  }));
 
   const team = [
     {
@@ -118,40 +109,17 @@ const About = () => {
     "AWS Advanced Technology Partner",
   ];
 
-  const timeline = [
-    {
-      year: "2021",
-      title: "Company Founded",
-      description:
-        "Started with a vision to democratize AI for marketing agencies worldwide.",
-    },
-    {
-      year: "2022",
-      title: "First AI Platform Launch",
-      description:
-        "Released our flagship automation platform, serving 50+ agencies in the first year.",
-    },
-    {
-      year: "2023",
-      title: "Series A Funding",
-      description:
-        "Raised $15M to accelerate AI research and global expansion.",
-    },
-    {
-      year: "2024",
-      title: "Global Expansion",
-      description:
-        "Now serving 500+ agencies across 25 countries with advanced AI solutions.",
-    },
-  ];
-
   return (
     <AuroraBackground>
       <Navigation />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20">
-        <div className="container mx-auto px-6">
+        <BackgroundBeams />
+        <Meteors number={30} />
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 via-purple-900/20 to-pink-900/20" />
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -184,7 +152,7 @@ const About = () => {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
+            {statsWithIcons.map((stat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -377,14 +345,16 @@ const About = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 via-transparent to-purple-900/10" />
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Our <span className="gradient-text">Journey</span>
@@ -395,36 +365,7 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto">
-            {timeline.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className={`flex items-center mb-16 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
-              >
-                <div className="flex-1">
-                  <FloatingCard
-                    className={`${index % 2 === 0 ? "mr-8" : "ml-8"}`}
-                  >
-                    <div className="text-2xl font-bold gradient-text mb-2">
-                      {item.year}
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-3">
-                      {item.title}
-                    </h3>
-                    <p className="text-white/70 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </FloatingCard>
-                </div>
-                <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex-shrink-0" />
-                <div className="flex-1" />
-              </motion.div>
-            ))}
-          </div>
+          <ConnectedTimeline items={companyTimeline} />
         </div>
       </section>
 
