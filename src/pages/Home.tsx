@@ -8,6 +8,10 @@ import {
   GlowingCard,
 } from "@/components/aceternity/FloatingCards";
 import { TextGenerateEffect } from "@/components/aceternity/TextGenerateEffect";
+import {
+  LayeredBackground,
+  SectionDivider,
+} from "@/components/aceternity/FlowingBackgrounds";
 import Navigation from "@/components/Navigation";
 import { companyStats } from "@/constants";
 import {
@@ -94,7 +98,10 @@ const Home = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20">
+      <LayeredBackground
+        variant="hero"
+        className="min-h-screen flex items-center justify-center pt-20"
+      >
         <div className="container mx-auto px-6 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -140,10 +147,13 @@ const Home = () => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </LayeredBackground>
+
+      {/* Section Divider */}
+      <SectionDivider />
 
       {/* Stats Section */}
-      <section className="py-20 relative">
+      <LayeredBackground variant="subtle" className="py-20">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {statsWithIcons.map((stat, index) => (
@@ -168,10 +178,10 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </LayeredBackground>
 
       {/* Features Section */}
-      <section className="py-20 relative">
+      <LayeredBackground variant="section" className="py-20">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -217,10 +227,10 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </LayeredBackground>
 
       {/* Benefits Section */}
-      <section className="py-20 relative">
+      <LayeredBackground variant="section" className="py-20">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -295,10 +305,10 @@ const Home = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </LayeredBackground>
 
       {/* CTA Section */}
-      <section className="py-20 relative">
+      <LayeredBackground variant="hero" className="py-20">
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -332,7 +342,7 @@ const Home = () => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </LayeredBackground>
     </AuroraBackground>
   );
 };
