@@ -387,9 +387,9 @@ const ProjectDetail = () => {
                   </div>
                 </div>
               </GlowingCard>
-          </motion.div>
+            </motion.div>
+          </div>
         </LayeredBackground>
-        </section>
       )}
 
       {/* Related Projects */}
@@ -451,7 +451,7 @@ const ProjectDetail = () => {
               })}
             </div>
           </div>
-        </section>
+        </LayeredBackground>
       )}
 
       {/* CTA Section */}
