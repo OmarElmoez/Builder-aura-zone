@@ -6,6 +6,10 @@ import {
   FloatingCard,
   GlowingCard,
 } from "@/components/aceternity/FloatingCards";
+import {
+  LayeredBackground,
+  SectionDivider,
+} from "@/components/aceternity/FlowingBackgrounds";
 
 import Navigation from "@/components/Navigation";
 import { companyStats, companyTimeline } from "@/constants";
@@ -112,7 +116,7 @@ const About = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20">
+      <LayeredBackground variant="hero" className="pt-32 pb-20">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -140,10 +144,13 @@ const About = () => {
             </p>
           </motion.div>
         </div>
-      </section>
+      </LayeredBackground>
+
+      {/* Section Divider */}
+      <SectionDivider />
 
       {/* Stats Section */}
-      <section className="py-20">
+      <LayeredBackground variant="subtle" className="py-20">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {statsWithIcons.map((stat, index) => (
@@ -167,10 +174,10 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </LayeredBackground>
 
       {/* Mission Section */}
-      <section className="py-20">
+      <LayeredBackground variant="section" className="py-20">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -239,10 +246,10 @@ const About = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </LayeredBackground>
 
       {/* Team Section */}
-      <section className="py-20">
+      <LayeredBackground variant="subtle" className="py-20">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -287,10 +294,10 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </LayeredBackground>
 
       {/* Values Section */}
-      <section className="py-20">
+      <LayeredBackground variant="section" className="py-20">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -336,10 +343,10 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </LayeredBackground>
 
       {/* Timeline Section */}
-      <section className="py-20">
+      <LayeredBackground variant="subtle" className="py-20">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -388,10 +395,10 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </LayeredBackground>
 
       {/* Achievements Section */}
-      <section className="py-20">
+      <LayeredBackground variant="section" className="py-20">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -425,10 +432,10 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </LayeredBackground>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <LayeredBackground variant="hero" className="py-20">
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -460,7 +467,7 @@ const About = () => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </LayeredBackground>
     </AuroraBackground>
   );
 };
