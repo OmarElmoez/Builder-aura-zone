@@ -25,6 +25,7 @@ export const GradientOrbs: React.FC<{ className?: string }> = ({
   return (
     <div className={`absolute inset-0 overflow-hidden ${className}`}>
       <motion.div
+        key="orb-1"
         className="absolute -top-32 -left-32 w-64 h-64 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"
         animate={{
           x: [0, 50, 0],
@@ -38,6 +39,7 @@ export const GradientOrbs: React.FC<{ className?: string }> = ({
         }}
       />
       <motion.div
+        key="orb-2"
         className="absolute top-1/3 -right-32 w-96 h-96 bg-gradient-to-bl from-purple-500/15 to-pink-500/15 rounded-full blur-3xl"
         animate={{
           x: [0, -30, 0],
@@ -52,6 +54,7 @@ export const GradientOrbs: React.FC<{ className?: string }> = ({
         }}
       />
       <motion.div
+        key="orb-3"
         className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-gradient-to-tr from-indigo-500/20 to-blue-500/20 rounded-full blur-3xl"
         animate={{
           x: [0, -20, 0],
