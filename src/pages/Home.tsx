@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { AuroraBackground } from "@/components/aceternity/AuroraBackground";
-import { BackgroundBeams } from "@/components/aceternity/BackgroundBeams";
-import { Meteors } from "@/components/aceternity/Meteors";
 import {
   FloatingCard,
   GlowingCard,
@@ -97,21 +95,6 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-20">
-        <BackgroundBeams />
-        <Meteors number={30} />
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20" />
-
-        {/* Floating orbs */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl animate-float" />
-        <div
-          className="absolute top-40 right-20 w-48 h-48 bg-purple-500/10 rounded-full blur-2xl animate-float"
-          style={{ animationDelay: "1s" }}
-        />
-        <div
-          className="absolute bottom-40 left-20 w-24 h-24 bg-pink-500/10 rounded-full blur-2xl animate-float"
-          style={{ animationDelay: "2s" }}
-        />
-
         <div className="container mx-auto px-6 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -189,7 +172,6 @@ const Home = () => {
 
       {/* Features Section */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/10 via-transparent to-purple-900/10" />
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -239,7 +221,6 @@ const Home = () => {
 
       {/* Benefits Section */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-l from-blue-900/10 via-transparent to-purple-900/10" />
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div

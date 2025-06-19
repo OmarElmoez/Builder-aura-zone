@@ -3,7 +3,6 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { AuroraBackground } from "@/components/aceternity/AuroraBackground";
-import { BackgroundBeams } from "@/components/aceternity/BackgroundBeams";
 import {
   GlowingCard,
   FloatingCard,
@@ -61,12 +60,9 @@ const ProjectDetail = () => {
     <AuroraBackground>
       <Navigation />
 
-      {/* Hero Section with Enhanced Background */}
+      {/* Hero Section */}
       <section className="relative pt-32 pb-20">
-        <BackgroundBeams />
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20" />
-
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6">
           {/* Back Navigation */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}

@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { AuroraBackground } from "@/components/aceternity/AuroraBackground";
-import { BackgroundBeams } from "@/components/aceternity/BackgroundBeams";
-import { Meteors } from "@/components/aceternity/Meteors";
 import { GlowingCard } from "@/components/aceternity/FloatingCards";
 import Navigation from "@/components/Navigation";
 import { projects, projectCategories } from "@/constants";
@@ -32,11 +30,7 @@ const Projects = () => {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20">
-        <BackgroundBeams />
-        <Meteors number={25} />
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20" />
-
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
