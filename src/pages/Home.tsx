@@ -189,6 +189,7 @@ const Home = () => {
 
       {/* Features Section */}
       <section className="py-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/10 via-transparent to-purple-900/10" />
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -238,6 +239,7 @@ const Home = () => {
 
       {/* Benefits Section */}
       <section className="py-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-l from-blue-900/10 via-transparent to-purple-900/10" />
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
