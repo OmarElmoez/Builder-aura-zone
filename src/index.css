@@ -126,6 +126,139 @@
   }
 }
 
+/* Base Styles */
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-feature-settings:
+    "rlig" 1,
+    "calt" 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glass morphism utility classes */
+.glass {
+  background: var(--color-glass);
+  backdrop-filter: blur(40px);
+  border: 1px solid var(--color-glass-border);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Aurora background */
+.aurora-bg {
+  background: linear-gradient(118deg, #1e3a8a 0%, #581c87 50%, #701a75 100%);
+  background-size: 300% 300%;
+  animation: var(--animate-aurora);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(to right, #60a5fa, #a855f7, #ec4899);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Meteor styles */
+.meteor {
+  position: absolute;
+  height: 2px;
+  width: 2px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #64748b, transparent);
+  filter: drop-shadow(0 0 6px #64748b);
+  animation: var(--animate-meteor);
+}
+
+.meteor:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, #64748b, transparent);
+}
+
+/* Shimmer effect */
+.shimmer {
+  background: linear-gradient(
+    110deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 75%
+  );
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+}
+
+/* Beam effect */
+.beam {
+  position: relative;
+  overflow: hidden;
+}
+
+.beam::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: var(--animate-beam);
+}
+
+/* Floating animation */
+.float {
+  animation: var(--animate-float);
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Hide scrollbar but allow scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 @layer base {
   * {
     @apply border-border;
